@@ -7,7 +7,7 @@
 #ifndef INCLUDE_git_openssl_h__
 #define INCLUDE_git_openssl_h__
 
-#include "git2/common.h"
+#include "third_party/libgit2/include/git2/common.h"
 
 GIT_BEGIN_DECL
 

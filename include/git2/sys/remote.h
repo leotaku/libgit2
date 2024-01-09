@@ -8,7 +8,7 @@
 #ifndef INCLUDE_sys_git_remote_h
 #define INCLUDE_sys_git_remote_h
 
-#include "git2/remote.h"
+#include "third_party/libgit2/include/git2/remote.h"
 
 /**
  * @file git2/sys/remote.h

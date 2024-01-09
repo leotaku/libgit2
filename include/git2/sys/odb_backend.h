@@ -7,10 +7,10 @@
 #ifndef INCLUDE_sys_git_odb_backend_h__
 #define INCLUDE_sys_git_odb_backend_h__
 
-#include "git2/common.h"
-#include "git2/types.h"
-#include "git2/oid.h"
-#include "git2/odb.h"
+#include "third_party/libgit2/include/git2/common.h"
+#include "third_party/libgit2/include/git2/types.h"
+#include "third_party/libgit2/include/git2/oid.h"
+#include "third_party/libgit2/include/git2/odb.h"
 
 /**
  * @file git2/sys/backend.h

@@ -7,8 +7,8 @@
 #ifndef INCLUDE_sys_git_credential_h__
 #define INCLUDE_sys_git_credential_h__
 
-#include "git2/common.h"
-#include "git2/credential.h"
+#include "third_party/libgit2/include/git2/common.h"
+#include "third_party/libgit2/include/git2/credential.h"
 
 /**
  * @file git2/sys/cred.h

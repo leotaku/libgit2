@@ -7,7 +7,7 @@
 #ifndef INCLUDE_sys_git_filter_h__
 #define INCLUDE_sys_git_filter_h__
 
-#include "git2/filter.h"
+#include "third_party/libgit2/include/git2/filter.h"
 
 /**
  * @file git2/sys/filter.h
