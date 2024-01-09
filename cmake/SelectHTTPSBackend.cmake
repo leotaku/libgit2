@@ -8,7 +8,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
 	find_package(CoreFoundation)
 endif()
 
-if(USE_HTTPS)
+if(NO)
 	# Auto-select TLS backend
 	sanitizebool(USE_HTTPS)
 	if(USE_HTTPS STREQUAL ON)

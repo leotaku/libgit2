@@ -14,7 +14,6 @@
 #include "http.h"
 #include "auth.h"
 #include "auth_negotiate.h"
-#include "auth_ntlm.h"
 #include "git2/sys/credential.h"
 #include "net.h"
 #include "stream.h"
@@ -25,7 +24,6 @@
 
 static git_http_auth_scheme auth_schemes[] = {
 	{ GIT_HTTP_AUTH_NEGOTIATE, "Negotiate", GIT_CREDENTIAL_DEFAULT, git_http_auth_negotiate },
-	{ GIT_HTTP_AUTH_NTLM, "NTLM", GIT_CREDENTIAL_USERPASS_PLAINTEXT, git_http_auth_ntlm },
 	{ GIT_HTTP_AUTH_BASIC, "Basic", GIT_CREDENTIAL_USERPASS_PLAINTEXT, git_http_auth_basic },
 };
 

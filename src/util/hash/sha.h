@@ -13,29 +13,24 @@
 typedef struct git_hash_sha1_ctx git_hash_sha1_ctx;
 typedef struct git_hash_sha256_ctx git_hash_sha256_ctx;
 
-#if defined(GIT_SHA1_COMMON_CRYPTO) || defined(GIT_SHA256_COMMON_CRYPTO)
-# include "common_crypto.h"
-#endif
+/* #if defined(GIT_SHA1_COMMON_CRYPTO) || defined(GIT_SHA256_COMMON_CRYPTO) */
+/* # include "common_crypto.h" */
+/* #endif */
 
-#if defined(GIT_SHA1_OPENSSL) || defined(GIT_SHA256_OPENSSL)
-# include "openssl.h"
-#endif
+/* #if defined(GIT_SHA1_OPENSSL) || defined(GIT_SHA256_OPENSSL) */
+/* # include "openssl.h" */
+/* #endif */
 
-#if defined(GIT_SHA1_WIN32) || defined(GIT_SHA256_WIN32)
-# include "win32.h"
-#endif
+/* #if defined(GIT_SHA1_WIN32) || defined(GIT_SHA256_WIN32) */
+/* # include "win32.h" */
+/* #endif */
 
-#if defined(GIT_SHA1_MBEDTLS) || defined(GIT_SHA256_MBEDTLS)
-# include "mbedtls.h"
-#endif
+/* #if defined(GIT_SHA1_MBEDTLS) || defined(GIT_SHA256_MBEDTLS) */
+/* # include "mbedtls.h" */
+/* #endif */
 
-#if defined(GIT_SHA1_COLLISIONDETECT)
 # include "collisiondetect.h"
-#endif
-
-#if defined(GIT_SHA256_BUILTIN)
 # include "builtin.h"
-#endif
 
 /*
  * SHA1
