@@ -696,29 +696,25 @@ bool git_fs_path_is_empty_dir(const char *path)
 
 int git_fs_path_set_error(int errno_value, const char *path, const char *action)
 {
-	switch (errno_value) {
-	case ENOENT:
-	case ENOTDIR:
-		git_error_set(GIT_ERROR_OS, "could not find '%s' to %s", path, action);
-		return GIT_ENOTFOUND;
+  if (errno_value == ENOENT || errno_value == ENOTDIR) {
+	git_error_set(GIT_ERROR_OS, "could not find '%s' to %s", path, action);
+	return GIT_ENOTFOUND;
+  }
+  if (errno_value == ENAMETOOLONG) {
+	git_error_set(GIT_ERROR_OS, "invalid path for filesystem '%s'", path);
+	return GIT_EINVALIDSPEC;
+  }
+  if (errno_value == EEXIST) {
+	git_error_set(GIT_ERROR_OS, "failed %s - '%s' already exists", action, path);
+	return GIT_EEXISTS;
+  }
+  if (errno_value == EACCES) {
+    git_error_set(GIT_ERROR_OS, "failed %s - '%s' is locked", action, path);
+    return GIT_ELOCKED;
+  }
 
-	case EINVAL:
-	case ENAMETOOLONG:
-		git_error_set(GIT_ERROR_OS, "invalid path for filesystem '%s'", path);
-		return GIT_EINVALIDSPEC;
-
-	case EEXIST:
-		git_error_set(GIT_ERROR_OS, "failed %s - '%s' already exists", action, path);
-		return GIT_EEXISTS;
-
-	case EACCES:
-		git_error_set(GIT_ERROR_OS, "failed %s - '%s' is locked", action, path);
-		return GIT_ELOCKED;
-
-	default:
-		git_error_set(GIT_ERROR_OS, "could not %s '%s'", action, path);
-		return -1;
-	}
+  git_error_set(GIT_ERROR_OS, "could not %s '%s'", action, path);
+  return -1;
 }
 
 int git_fs_path_lstat(const char *path, struct stat *st)

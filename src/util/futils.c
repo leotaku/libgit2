@@ -74,14 +74,12 @@ int git_futils_creat_locked(const char *path, const mode_t mode)
 	if (fd < 0) {
 		int error = errno;
 		git_error_set(GIT_ERROR_OS, "failed to create locked file '%s'", path);
-		switch (error) {
-		case EEXIST:
+		if (error == EEXIST)
 			return GIT_ELOCKED;
-		case ENOENT:
+	    if (error == ENOENT)
 			return GIT_ENOTFOUND;
-		default:
+		else
 			return -1;
-		}
 	}
 
 	return fd;
