@@ -39,20 +39,6 @@ POSSIBILITY OF SUCH DAMAGE.
 #ifndef _PCRE_H
 #define _PCRE_H
 
-
-#define NEWLINE			10
-#define POSIX_MALLOC_THRESHOLD	10
-#define LINK_SIZE		2
-#define PARENS_NEST_LIMIT       250
-#define MATCH_LIMIT		10000000
-#define MATCH_LIMIT_RECURSION	MATCH_LIMIT
-#define PCREGREP_BUFSIZE
-
-#define MAX_NAME_SIZE	32
-#define MAX_NAME_COUNT	10000
-
-
-
 /* The current PCRE version information. */
 
 #define PCRE_MAJOR          8
