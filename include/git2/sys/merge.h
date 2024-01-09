@@ -7,10 +7,10 @@
 #ifndef INCLUDE_sys_git_merge_h__
 #define INCLUDE_sys_git_merge_h__
 
-#include "git2/common.h"
-#include "git2/types.h"
-#include "git2/index.h"
-#include "git2/merge.h"
+#include "third_party/libgit2/include/git2/common.h"
+#include "third_party/libgit2/include/git2/types.h"
+#include "third_party/libgit2/include/git2/index.h"
+#include "third_party/libgit2/include/git2/merge.h"
 
 /**
  * @file git2/sys/merge.h

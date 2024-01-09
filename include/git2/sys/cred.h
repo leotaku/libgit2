@@ -9,7 +9,7 @@
 
 /* These declarations have moved. */
 #ifndef GIT_DEPRECATE_HARD
-# include "git2/sys/credential.h"
+# include "third_party/libgit2/include/git2/sys/credential.h"
 #endif
 
 #endif

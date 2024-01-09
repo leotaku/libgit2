@@ -9,7 +9,7 @@
 
 /* These declarations have moved. */
 #ifndef GIT_DEPRECATE_HARD
-# include "git2/credential_helpers.h"
+# include "third_party/libgit2/include/git2/credential_helpers.h"
 #endif
 
 #endif
