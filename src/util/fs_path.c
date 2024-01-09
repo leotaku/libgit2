@@ -21,6 +21,7 @@
 #endif
 #include <stdio.h>
 #include <ctype.h>
+#include <errno.h>
 
 #define ensure_error_set(code) do { \
 		const git_error *e = git_error_last(); \

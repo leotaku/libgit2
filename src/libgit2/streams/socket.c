@@ -186,7 +186,7 @@ static int socket_connect(git_stream *stream)
 	}
 
 	for (p = info; p != NULL; p = p->ai_next) {
-		s = socket(p->ai_family, p->ai_socktype | SOCK_CLOEXEC, p->ai_protocol);
+		s = socket(p->ai_family, p->ai_socktype | 0, p->ai_protocol);
 
 		if (s == INVALID_SOCKET)
 			continue;
