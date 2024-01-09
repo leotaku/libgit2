@@ -3,11 +3,106 @@
 
 PKGS += THIRD_PARTY_GIT2
 
-FILES = \
+THIRD_PARTY_GIT2_A_RAW_HDRS = \
+	include/git2/annotated_commit.h \
+	include/git2/apply.h \
+	include/git2/attr.h \
+	include/git2/blame.h \
+	include/git2/blob.h \
+	include/git2/branch.h \
+	include/git2/buffer.h \
+	include/git2/cert.h \
+	include/git2/checkout.h \
+	include/git2/cherrypick.h \
+	include/git2/clone.h \
+	include/git2/commit.h \
+	include/git2/common.h \
+	include/git2/config.h \
+	include/git2/credential.h \
+	include/git2/credential_helpers.h \
+	include/git2/cred_helpers.h \
+	include/git2/deprecated.h \
+	include/git2/describe.h \
+	include/git2/diff.h \
+	include/git2/email.h \
+	include/git2/errors.h \
+	include/git2/experimental.h \
+	include/git2/filter.h \
+	include/git2/global.h \
+	include/git2/graph.h \
+	include/git2/ignore.h \
+	include/git2/indexer.h \
+	include/git2/index.h \
+	include/git2/mailmap.h \
+	include/git2/merge.h \
+	include/git2/message.h \
+	include/git2/net.h \
+	include/git2/notes.h \
+	include/git2/object.h \
+	include/git2/odb_backend.h \
+	include/git2/odb.h \
+	include/git2/oidarray.h \
+	include/git2/oid.h \
+	include/git2/pack.h \
+	include/git2/patch.h \
+	include/git2/pathspec.h \
+	include/git2/proxy.h \
+	include/git2/rebase.h \
+	include/git2/refdb.h \
+	include/git2/reflog.h \
+	include/git2/refs.h \
+	include/git2/refspec.h \
+	include/git2/remote.h \
+	include/git2/repository.h \
+	include/git2/reset.h \
+	include/git2/revert.h \
+	include/git2/revparse.h \
+	include/git2/revwalk.h \
+	include/git2/signature.h \
+	include/git2/stash.h \
+	include/git2/status.h \
+	include/git2/stdint.h \
+	include/git2/strarray.h \
+	include/git2/submodule.h \
+	include/git2/sys \
+	include/git2/tag.h \
+	include/git2/trace.h \
+	include/git2/transaction.h \
+	include/git2/transport.h \
+	include/git2/tree.h \
+	include/git2/types.h \
+	include/git2/version.h \
+	include/git2/worktree.h \
+	include/git2/sys/alloc.h \
+	include/git2/sys/commit_graph.h \
+	include/git2/sys/commit.h \
+	include/git2/sys/config.h \
+	include/git2/sys/credential.h \
+	include/git2/sys/cred.h \
+	include/git2/sys/diff.h \
+	include/git2/sys/email.h \
+	include/git2/sys/errors.h \
+	include/git2/sys/filter.h \
+	include/git2/sys/hashsig.h \
+	include/git2/sys/index.h \
+	include/git2/sys/mempack.h \
+	include/git2/sys/merge.h \
+	include/git2/sys/midx.h \
+	include/git2/sys/odb_backend.h \
+	include/git2/sys/openssl.h \
+	include/git2/sys/path.h \
+	include/git2/sys/refdb_backend.h \
+	include/git2/sys/reflog.h \
+	include/git2/sys/refs.h \
+	include/git2/sys/remote.h \
+	include/git2/sys/repository.h \
+	include/git2/sys/stream.h \
+	include/git2/sys/transport.h
+
+THIRD_PARTY_GIT2_A_RAW_SRCS = \
 	src/util/alloc.c \
 	src/util/allocators/failalloc.c \
 	src/util/allocators/stdalloc.c \
-	src/util/allocators/win32_leakcheck.c \
 	src/util/date.c \
 	src/util/errors.c \
 	src/util/filebuf.c \
@@ -36,11 +131,7 @@ FILES = \
 	src/util/unix/map.c \
 	src/util/unix/process.c \
 	src/util/unix/realpath.c \
-	src/util/hash/collisiondetect.c \
-	src/util/hash/sha1dc/sha1.c \
-	src/util/hash/sha1dc/ubc_check.c \
-	src/util/hash/builtin.c \
-	src/util/hash/rfc6234/sha224-256.c \
+	src/util/hash/mbedtls.c \
 	src/libgit2/annotated_commit.c \
 	src/libgit2/apply.c \
 	src/libgit2/attr.c \
@@ -172,57 +263,20 @@ FILES = \
 	src/libgit2/tree.c \
 	src/libgit2/worktree.c \
 	deps/http-parser/http_parser.c \
-	deps/pcre/pcre_byte_order.c \
-	deps/pcre/pcre_chartables.c \
-	deps/pcre/pcre_compile.c \
-	deps/pcre/pcre_config.c \
-	deps/pcre/pcre_dfa_exec.c \
-	deps/pcre/pcre_exec.c \
-	deps/pcre/pcre_fullinfo.c \
-	deps/pcre/pcre_get.c \
-	deps/pcre/pcre_globals.c \
-	deps/pcre/pcre_jit_compile.c \
-	deps/pcre/pcre_maketables.c \
-	deps/pcre/pcre_newline.c \
-	deps/pcre/pcre_ord2utf8.c \
-	deps/pcre/pcre_refcount.c \
-	deps/pcre/pcre_string_utils.c \
-	deps/pcre/pcre_study.c \
-	deps/pcre/pcre_tables.c \
-	deps/pcre/pcre_ucd.c \
-	deps/pcre/pcre_valid_utf8.c \
-	deps/pcre/pcre_version.c \
-	deps/pcre/pcre_xclass.c \
-	deps/pcre/pcreposix.c \
 	deps/xdiff/xdiffi.c \
 	deps/xdiff/xemit.c \
 	deps/xdiff/xhistogram.c \
 	deps/xdiff/xmerge.c \
 	deps/xdiff/xpatience.c \
 	deps/xdiff/xprepare.c \
-	deps/xdiff/xutils.c \
-	deps/zlib/adler32.c \
-	deps/zlib/crc32.c \
-	deps/zlib/deflate.c \
-	deps/zlib/infback.c \
-	deps/zlib/inffast.c \
-	deps/zlib/inflate.c \
-	deps/zlib/inftrees.c \
-	deps/zlib/trees.c \
-	deps/zlib/zutil.c
+	deps/xdiff/xutils.c
 
 THIRD_PARTY_GIT2_ARTIFACTS += THIRD_PARTY_GIT2_A
 THIRD_PARTY_GIT2 = $(THIRD_PARTY_GIT2_A_DEPS) $(THIRD_PARTY_GIT2_A)
 THIRD_PARTY_GIT2_A = o/$(MODE)/third_party/libgit2/libgit2.a
 THIRD_PARTY_GIT2_A_FILES := \
-	$(wildcard \
-		third_party/libgit2/include/git2.h \
-		third_party/libgit2/include/git2/* \
-		third_party/libgit2/include/git2/sys/* \
-		third_party/libgit2/src/util/*.h \
-		third_party/libgit2/src/util/allocators/*.h \
-	) \
-	$(foreach it, $(FILES), third_party/libgit2/$(it))
+	$(foreach it, $(THIRD_PARTY_GIT2_A_RAW_HDRS), third_party/libgit2/$(it)) \
+	$(foreach it, $(THIRD_PARTY_GIT2_A_RAW_SRCS), third_party/libgit2/$(it))
 THIRD_PARTY_GIT2_A_HDRS = $(filter %.h,$(THIRD_PARTY_GIT2_A_FILES))
 THIRD_PARTY_GIT2_A_SRCS = $(filter %.c,$(THIRD_PARTY_GIT2_A_FILES))
 THIRD_PARTY_GIT2_A_OBJS = $(THIRD_PARTY_GIT2_A_SRCS:%.c=o/$(MODE)/%.o)
@@ -247,14 +301,16 @@ THIRD_PARTY_GIT2_A_DIRECTDEPS = 				\
 	LIBC_TIME						\
 	LIBC_THREAD						\
 	LIBC_PROC						\
-	THIRD_PARTY_MUSL
-
+	THIRD_PARTY_MUSL					\
+	THIRD_PARTY_PCRE					\
+	THIRD_PARTY_ZLIB					\
+	THIRD_PARTY_MBEDTLS
 
 THIRD_PARTY_GIT2_A_DEPS :=					\
 	$(call uniq,$(foreach x,$(THIRD_PARTY_GIT2_A_DIRECTDEPS),$($(x))))
 
 $(THIRD_PARTY_GIT2_A):						\
-		third_party/linenoise/				\
+		third_party/libgit2/				\
 		$(THIRD_PARTY_GIT2_A).pkg			\
 		$(THIRD_PARTY_GIT2_A_OBJS)
 
@@ -268,10 +324,26 @@ $(THIRD_PARTY_GIT2_A_OBJS): private				\
 			-Ithird_party/libgit2/src/util		\
 			-Ithird_party/libgit2/src/libgit2	\
 			-Ithird_party/libgit2/deps/http-parser	\
-			-Ithird_party/libgit2/deps/zlib		\
-			-Ithird_party/libgit2/deps/pcre		\
 			-Ithird_party/libgit2/deps/xdiff	\
-			-DLINK_SIZE=2
+			-Ithird_party/zlib			\
+			-Ithird_party/pcre			\
+			-Ithird_party/mbedtls			\
+			-Ithird_party				\
+			-DLIBGIT2_NO_FEATURES_H			\
+			-DGIT_THREADS				\
+			-DGIT_ARCH_64				\
+			-DGIT_USE_NSEC				\
+			-DGIT_USE_STAT_MTIM			\
+			-DGIT_USE_FUTIMENS			\
+			-DGIT_REGEX_PCRE2			\
+			-DGIT_QSORT_G				\
+			-DGIT_NTL=0				\
+			-DGIT_SHA1_MBEDTLS			\
+			-DGIT_SHA256_MBEDTLS			\
+			-DGIT_RAND_GETENTROPY			\
+			-DGIT_RAND_GETLOADAVG			\
+			-DGIT_IO_POLL				\
+			-DGIT_IO_SELECT
 
 THIRD_PARTY_GIT2_LIBS = $(foreach x,$(THIRD_PARTY_GIT2_ARTIFACTS),$($(x)))
 THIRD_PARTY_GIT2_SRCS = $(foreach x,$(THIRD_PARTY_GIT2_ARTIFACTS),$($(x)_SRCS))
