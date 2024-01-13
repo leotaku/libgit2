@@ -29,21 +29,21 @@ int git_hash_sha1_init(git_hash_sha1_ctx *ctx)
 {
 	GIT_ASSERT_ARG(ctx);
 	mbedtls_sha1_init(&ctx->c);
-	mbedtls_sha1_starts(&ctx->c);
+	mbedtls_sha1_starts_ret(&ctx->c);
 	return 0;
 }
 
 int git_hash_sha1_update(git_hash_sha1_ctx *ctx, const void *data, size_t len)
 {
 	GIT_ASSERT_ARG(ctx);
-	mbedtls_sha1_update(&ctx->c, data, len);
+	mbedtls_sha1_update_ret(&ctx->c, data, len);
 	return 0;
 }
 
 int git_hash_sha1_final(unsigned char *out, git_hash_sha1_ctx *ctx)
 {
 	GIT_ASSERT_ARG(ctx);
-	mbedtls_sha1_finish(&ctx->c, out);
+	mbedtls_sha1_finish_ret(&ctx->c, out);
 	return 0;
 }
 
@@ -71,21 +71,21 @@ int git_hash_sha256_init(git_hash_sha256_ctx *ctx)
 {
 	GIT_ASSERT_ARG(ctx);
 	mbedtls_sha256_init(&ctx->c);
-	mbedtls_sha256_starts(&ctx->c, 0);
+	mbedtls_sha256_starts_ret(&ctx->c, 0);
 	return 0;
 }
 
 int git_hash_sha256_update(git_hash_sha256_ctx *ctx, const void *data, size_t len)
 {
 	GIT_ASSERT_ARG(ctx);
-	mbedtls_sha256_update(&ctx->c, data, len);
+	mbedtls_sha256_update_ret(&ctx->c, data, len);
 	return 0;
 }
 
 int git_hash_sha256_final(unsigned char *out, git_hash_sha256_ctx *ctx)
 {
 	GIT_ASSERT_ARG(ctx);
-	mbedtls_sha256_finish(&ctx->c, out);
+	mbedtls_sha256_finish_ret(&ctx->c, out);
 	return 0;
 }
 
