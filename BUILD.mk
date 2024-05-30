@@ -223,6 +223,7 @@ THIRD_PARTY_GIT2_A_RAW_SRCS = \
 	src/libgit2/revert.c \
 	src/libgit2/revparse.c \
 	src/libgit2/revwalk.c \
+	src/libgit2/settings.c \
 	src/libgit2/signature.c \
 	src/libgit2/stash.c \
 	src/libgit2/status.c \
@@ -251,6 +252,7 @@ THIRD_PARTY_GIT2_A_RAW_SRCS = \
 	src/libgit2/transports/git.c \
 	src/libgit2/transports/http.c \
 	src/libgit2/transports/httpclient.c \
+	src/libgit2/transports/httpparser.c \
 	src/libgit2/transports/local.c \
 	src/libgit2/transports/smart.c \
 	src/libgit2/transports/smart_pkt.c \
@@ -262,7 +264,9 @@ THIRD_PARTY_GIT2_A_RAW_SRCS = \
 	src/libgit2/tree-cache.c \
 	src/libgit2/tree.c \
 	src/libgit2/worktree.c \
-	deps/http-parser/http_parser.c \
+	deps/llhttp/api.c \
+	deps/llhttp/http.c \
+	deps/llhttp/llhttp.c \
 	deps/xdiff/xdiffi.c \
 	deps/xdiff/xemit.c \
 	deps/xdiff/xhistogram.c \
@@ -298,11 +302,11 @@ THIRD_PARTY_GIT2_A_DIRECTDEPS = 				\
 	LIBC_LOG						\
 	LIBC_SYSV_CALLS						\
 	LIBC_STR						\
-	LIBC_TIME						\
 	LIBC_THREAD						\
 	LIBC_PROC						\
 	THIRD_PARTY_MUSL					\
 	THIRD_PARTY_PCRE					\
+	THIRD_PARTY_TZ						\
 	THIRD_PARTY_ZLIB					\
 	THIRD_PARTY_MBEDTLS
 
@@ -323,7 +327,7 @@ $(THIRD_PARTY_GIT2_A_OBJS): private				\
 			-Ithird_party/libgit2/include		\
 			-Ithird_party/libgit2/src/util		\
 			-Ithird_party/libgit2/src/libgit2	\
-			-Ithird_party/libgit2/deps/http-parser	\
+			-Ithird_party/libgit2/deps/llhttp	\
 			-Ithird_party/libgit2/deps/xdiff	\
 			-Ithird_party/zlib			\
 			-Ithird_party/pcre			\
@@ -338,6 +342,7 @@ $(THIRD_PARTY_GIT2_A_OBJS): private				\
 			-DGIT_REGEX_PCRE2			\
 			-DGIT_QSORT_G				\
 			-DGIT_NTL=0				\
+			-DGIT_HTTPPARSER_BUILTIN		\
 			-DGIT_SHA1_MBEDTLS			\
 			-DGIT_SHA256_MBEDTLS			\
 			-DGIT_RAND_GETENTROPY			\
