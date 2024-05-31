@@ -1416,7 +1416,7 @@ int git_http_client_read_response(
 	git_http_client *client)
 {
 	http_parser_context parser_context = {0};
-	int error;
+	int error = 0;
 
 	GIT_ASSERT_ARG(response);
 	GIT_ASSERT_ARG(client);

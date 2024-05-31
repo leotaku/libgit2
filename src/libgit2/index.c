@@ -2801,7 +2801,7 @@ static int parse_index(git_index *index, const char *buffer, size_t buffer_size)
 	/* Parse all the entries */
 	for (i = 0; i < header.entry_count && buffer_size > checksum_size; ++i) {
 		git_index_entry *entry = NULL;
-		size_t entry_size;
+		size_t entry_size = 0;
 
 		if ((error = read_entry(&entry, &entry_size, index, checksum_size, buffer, buffer_size, last)) < 0) {
 			error = index_error_invalid("invalid entry");

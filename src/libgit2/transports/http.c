@@ -477,7 +477,7 @@ static int send_probe(http_stream *stream)
 	git_http_response response = {0};
 	bool complete = false;
 	size_t step, steps = 1;
-	int error;
+	int error = 0;
 
 	/* NTLM requires a full challenge/response */
 	if (transport->server.auth_schemetypes == GIT_HTTP_AUTH_NTLM)
